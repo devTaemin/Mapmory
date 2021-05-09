@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const session = require('express-session');
 const app = express();
 
 app.use(bodyParser.json());
@@ -16,40 +16,48 @@ app.use(session({
 app.get('/', function(req,res){
     res.send("Home page");
 })
+
 //login
 app.put('/login',function(req,res){
     res.send("Login page");
 })
+
 //logout
 app.put('/logout',function(req,res){
     res.send("Logout page");
 })
+
 //register
 app.post('/register',function(req,res){
-    res.send('register page');
+    res.send('Register page');
 })
+
 //Mapmain
 app.get('/Mapmain',function(req,res){
     res.send('Mapmain page');
 })
+
 //Read post
 app.get('/Mapmain/posts/:postId',function(req,res){
     var postId = req.params.postId;
-    res.send("Mapmain post page", postId);
+    res.send("Mapmain post page " + postId);
 })
+
 //Create post
 app.post('/Mapmain/posts',function(req,res){
     res.send("Mapmain create page");
 })
+
 //Update post
 app.put('/Mapmain/posts/:postId',function(req,res){
     var postId = req.params.postId;
-    res.send("Mapmain update page");
+    res.send("Mapmain update page " + postId);
 })
+
 //Delete post
 app.delete('/Mapmain/posts/:postId',function(req,res){
     var postId = req.params.postId;
-    res.send("Mapmain update page");
+    res.send("Mapmain delete page " + postId);
 })
 //Mapmain/category/:_category
 //Mapmain/post/:_pk
