@@ -3,6 +3,12 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const app = express();
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.use(express.static('public'));
+
+
 app.use(bodyParser.json());
 
 app.use(session({ 
@@ -14,7 +20,7 @@ app.use(session({
 
 //Home
 app.get('/', function(req,res){
-    res.send("Home page");
+    res.render("index.html");
 })
 
 //login
