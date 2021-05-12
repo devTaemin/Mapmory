@@ -2,9 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const app = express();
+const mySql = require('mysql');
 
-app.set('views', __dirname + '/views');
+const pool = mySql.createPool({
+    connectionLimit: 10,
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'mapmory',
+    debug: false
+});
+
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static('public'));
 
@@ -18,14 +28,19 @@ app.use(session({
     saveUninitialized: false,
  }));
 
-//Home
+//Home page
 app.get('/', function(req,res){
     res.render("index.html");
 })
 
+//Login page
+app.get('/login', function(req,res){
+    res.render("login.html");
+})
+
 //login
 app.put('/login',function(req,res){
-    res.send("Login page");
+    res.send("login.html");
 })
 
 //logout
@@ -34,7 +49,24 @@ app.put('/logout',function(req,res){
 })
 
 //register
+
+app.get('/register', function(req,res){
+    res.send("register.html");
+})
+
 app.post('/register',function(req,res){
+    console.log('/register 호출됨');
+
+    var user = {
+        'ID': req.body.id,
+        'PWD': req.body.pwd,
+        'NAME': req.body.name
+    }
+    console.log('ID: ' + user.id + ', PWD: ' + user.PWD + ', NAME: ' + user.NAME);
+    
+
+
+    //connection.query('INSERT INTO USER SET ?', user, function(error, results, fields))
     res.send('Register page');
 })
 
