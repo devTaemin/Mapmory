@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('body-parser');
 const app = express();
 
+
 // DB Setting
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
@@ -16,15 +17,17 @@ mongoose.connect('mongodb+srv://Mapmory_admin:admin@cluster0.ncnjj.mongodb.net/P
 // Store DB in the variable 'db'
 var db = mongoose.connection;
 
+
 // If DB is opened successfully
 db.once('open', function(){
     console.log('DB connected');
-});
 
+});
 // if DB is failed to open
 db.on('error', function(err){
     console.log('DB ERROR : ', err);
 });
+
 
 // Settings
 app.set('view engine', 'ejs');
@@ -34,9 +37,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 
+
 // Routes
 app.use('/', require('./routes/home'));
+app.use('/posts', require('./routes/posts'));
 
+
+// Server
 var port = 3000;
 app.listen(port, function(){
     console.log('server on! http://localhost:' + port);
