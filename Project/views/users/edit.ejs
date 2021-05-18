@@ -78,12 +78,18 @@
           <small>*Required</small>
         </p>
 
+        <div class="buttons">
+          <a class="btn btn-primary" href="/users/<%= user.username %>">Back</a>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
         <% if(errors.unhandled){ %> <!-- 4 -->
           <div class="alert alert-danger">
             <%= errors.unhandled %>
           </div>
         <% } %>
-
+        
+        
       </form>
 
     </div>

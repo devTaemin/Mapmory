@@ -1,5 +1,5 @@
 body {
-    
+    background-color:whitesmoke;
   }
   .h1 {
     font-family: 'PT Serif', serif;
@@ -21,7 +21,11 @@ body {
   .board-table .date {
     width: 100px;
   }
-  
+  .board-table .author,
+  .board-table .date{
+    width: 100px;
+  }
+
   .post-body{
     white-space: pre-line; /* 2 */
   }
@@ -32,3 +36,11 @@ body {
   .user-form {
     width: 400px;
   }
+
+
+.mb-3{
+  background-color:tan;
+}
+
+
+  
