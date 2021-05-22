@@ -4,6 +4,7 @@ var Post = require('../models/Post');
 var util = require('../util');
 
 
+
 // Post home
 router.get('/', function(req, res){
     Post.find({})
@@ -55,8 +56,8 @@ router.get('/:id/edit', util.isLoggedin, checkPermission, function(req, res){
     var errors = req.flash('errors')[0] || {};
     if(!post){
         Post.findOne({_id:req.params.id}, function(err, post){
-            if(err){return res.join(err)};
-            res.render('posts/edit', {posts:post, errors:errors});
+            if(err){return res.json(err)};
+            res.render('posts/edit', {post:post, errors:errors});
         });
     }
     else{
@@ -73,9 +74,9 @@ router.put('/:id', util.isLoggedin, checkPermission, function(req, res){
         if(err){
             req.flash('post', req.body),
             req.flash('errors', util.parseError(err));
-            return res.redirect('/posts/'+ req.params,id + '/edit');
+            return res.redirect('/posts/'+ req.params.id + '/edit');
         };
-        res.redirect('posts/' + req.params.id);
+        res.redirect('/posts/' + req.params.id);
     });
 });
 
