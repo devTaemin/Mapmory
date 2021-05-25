@@ -1,6 +1,9 @@
 body {
     background-color:whitesmoke;
   }
+  .mb-3 {
+    font-family: 'Archivo', sans-serif;
+  }
   .h1 {
     font-family: 'PT Serif', serif;
   }
@@ -38,9 +41,9 @@ body {
   }
 
 
-.mb-3{
+/* .mb-3{
   background-color:tan;
-}
+} */
 
 
   

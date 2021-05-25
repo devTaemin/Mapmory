@@ -2,95 +2,120 @@
 <html>
   <head>
     <%- include('../partials/head') %>
+    <style>
+      #edit {
+        font-family: 'Archivo', sans-serif;
+        /* font-family: 'PT Serif', serif; */
+        font-size:3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      div#edit_wrapper{
+        border: 20px transparent white;
+        padding: 5px 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 450px; height: 250px;
+        margin-left: -220px;
+        margin-top: -170px;
+
+        display: flex; flex-direction:column; justify-content:center; align-items: center;
+      }
+    </style>
   </head>
   <body>
     <%- include('../partials/nav') %>
 
     <div class="container mb-3">
+      <div id="edit_wrapper">
+        <h3 class="mb-3" id="edit">Edit User</h3>
 
-      <h3 class="mb-3">Edit User</h3>
+        <form action="/users/<%= username %>?_method=put" method="post"> <!-- 1 -->
 
-      <form action="/users/<%= username %>?_method=put" method="post"> <!-- 1 -->
-
-        <div class="form-group row">
-          <label for="currentPassword" class="col-sm-3 col-form-label">Current Password*</label>
-          <div class="col-sm-9 col-sm-offset-3">
-            <input type="password" id="currentPassword" name="currentPassword" value="" class="form-control <%= (errors.currentPassword)?'is-invalid':'' %>"> <!-- 2 -->
-            <% if(errors.currentPassword){ %> <!-- 3 -->
-              <span class="invalid-feedback"><%= errors.currentPassword.message %></span>
-            <% } %>
+          <div class="form-group row">
+            <label for="currentPassword" class="col-sm-3 col-form-label" style="font-weight: bold; font-family: 'Archivo', sans-serif;">Current Password*</label>
+            <div class="col-sm-9 col-sm-offset-3">
+              <input type="password" id="currentPassword" name="currentPassword" value="" class="form-control <%= (errors.currentPassword)?'is-invalid':'' %>"> <!-- 2 -->
+              <% if(errors.currentPassword){ %> <!-- 3 -->
+                <span class="invalid-feedback"><%= errors.currentPassword.message %></span>
+              <% } %>
+            </div>
           </div>
-        </div>
 
-        <hr></hr>
+          <hr></hr>
 
-        <div class="form-group row">
-          <label for="username" class="col-sm-3 col-form-label">Username*</label>
-          <div class="col-sm-9">
-            <input type="text" id="username" name="username" value="<%= user.username %>" class="form-control <%= (errors.username)?'is-invalid':'' %>"> <!-- 2 -->
-            <% if(errors.username){ %> <!-- 3 -->
-              <span class="invalid-feedback"><%= errors.username.message %></span>
-            <% } %>
+          <div class="form-group row">
+            <label for="username" class="col-sm-3 col-form-label" style="font-weight: bold; font-family: 'Archivo', sans-serif;">Username*</label>
+            <div class="col-sm-9">
+              <input type="text" id="username" name="username" value="<%= user.username %>" class="form-control <%= (errors.username)?'is-invalid':'' %>"> <!-- 2 -->
+              <% if(errors.username){ %> <!-- 3 -->
+                <span class="invalid-feedback"><%= errors.username.message %></span>
+              <% } %>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group row">
-          <label for="name" class="col-sm-3 col-form-label">Name*</label>
-          <div class="col-sm-9">
-            <input type="text" id="name" name="name" value="<%= user.name %>" class="form-control <%= (errors.name)?'is-invalid':'' %>"> <!-- 2 -->
-            <% if(errors.name){ %> <!-- 3 -->
-              <span class="invalid-feedback"><%= errors.name.message %></span>
-            <% } %>
+          <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label" style="font-weight: bold; font-family: 'Archivo', sans-serif;">Name*</label>
+            <div class="col-sm-9">
+              <input type="text" id="name" name="name" value="<%= user.name %>" class="form-control <%= (errors.name)?'is-invalid':'' %>"> <!-- 2 -->
+              <% if(errors.name){ %> <!-- 3 -->
+                <span class="invalid-feedback"><%= errors.name.message %></span>
+              <% } %>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group row">
-          <label for="email" class="col-sm-3 col-form-label">Email</label>
-          <div class="col-sm-9">
-            <input type="text" id="email" name="email" value="<%= user.email %>" class="form-control <%= (errors.email)?'is-invalid':'' %>"> <!-- 2 -->
-            <% if(errors.email){ %> <!-- 3 -->
-              <span class="invalid-feedback"><%= errors.email.message %></span>
-            <% } %>
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label" style="font-weight: bold; font-family: 'Archivo', sans-serif;">Email</label>
+            <div class="col-sm-9">
+              <input type="text" id="email" name="email" value="<%= user.email %>" class="form-control <%= (errors.email)?'is-invalid':'' %>"> <!-- 2 -->
+              <% if(errors.email){ %> <!-- 3 -->
+                <span class="invalid-feedback"><%= errors.email.message %></span>
+              <% } %>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group row">
-          <label for="newPassword" class="col-sm-3 col-form-label">New Password</label>
-          <div class="col-sm-9 col-sm-offset-3">
-            <input type="password" id="newPassword" name="newPassword" value="" class="form-control <%= (errors.newPassword)?'is-invalid':'' %>"> <!-- 2 -->
-            <% if(errors.newPassword){ %> <!-- 3 -->
-              <span class="invalid-feedback"><%= errors.newPassword.message %></span>
-            <% } %>
+          <div class="form-group row">
+            <label for="newPassword" class="col-sm-3 col-form-label" style="font-weight: bold; font-family: 'Archivo', sans-serif;">New Password</label>
+            <div class="col-sm-9 col-sm-offset-3">
+              <input type="password" id="newPassword" name="newPassword" value="" class="form-control <%= (errors.newPassword)?'is-invalid':'' %>"> <!-- 2 -->
+              <% if(errors.newPassword){ %> <!-- 3 -->
+                <span class="invalid-feedback"><%= errors.newPassword.message %></span>
+              <% } %>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group row">
-          <label for="passwordConfirmation" class="col-sm-3 col-form-label">Password Confirmation</label>
-          <div class="col-sm-9 col-sm-offset-3">
-            <input type="password" id="passwordConfirmation" name="passwordConfirmation" value="" class="form-control <%= (errors.passwordConfirmation)?'is-invalid':'' %>"> <!-- 2 -->
-            <% if(errors.passwordConfirmation){ %> <!-- 3 -->
-              <span class="invalid-feedback"><%= errors.passwordConfirmation.message %></span>
-            <% } %>
+          <div class="form-group row">
+            <label for="passwordConfirmation" class="col-sm-3 col-form-label" style="font-weight: bold; font-family: 'Archivo', sans-serif;">Password Confirmation</label>
+            <div class="col-sm-9 col-sm-offset-3">
+              <input type="password" id="passwordConfirmation" name="passwordConfirmation" value="" class="form-control <%= (errors.passwordConfirmation)?'is-invalid':'' %>"> <!-- 2 -->
+              <% if(errors.passwordConfirmation){ %> <!-- 3 -->
+                <span class="invalid-feedback"><%= errors.passwordConfirmation.message %></span>
+              <% } %>
+            </div>
           </div>
-        </div>
 
-        <p>
-          <small>*Required</small>
-        </p>
+          <p>
+            <small style="font-family: 'Archivo', sans-serif; color:red">*Required</small>
+          </p>
 
-        <div class="buttons">
-          <a class="btn btn-primary" href="/users/<%= user.username %>">Back</a>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-
-        <% if(errors.unhandled){ %> <!-- 4 -->
-          <div class="alert alert-danger">
-            <%= errors.unhandled %>
+          <div class="buttons" style="float:right; font-weight: bold; font-family: 'Archivo', sans-serif;">
+            <a class="btn btn-outline-secondary" href="/users/<%= user.username %>">Back</a>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
           </div>
-        <% } %>
-        
-        
-      </form>
+
+          <% if(errors.unhandled){ %> <!-- 4 -->
+            <div class="alert alert-danger">
+              <%= errors.unhandled %>
+            </div>
+          <% } %>
+          
+          
+        </form>
+      </div>
+
+      
 
     </div>
   </body>

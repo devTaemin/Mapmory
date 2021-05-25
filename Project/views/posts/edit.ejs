@@ -5,6 +5,7 @@
   </head>
   <body>
     <%- include('../partials/nav') %>
+    <%- include('../partials/gmap') %> 
 
     <div class="container mb-3">
 
@@ -36,7 +37,7 @@
         </div>
         
         <div class="form-group">
-          <label for="body">Body</label>
+          <label for="body">Content</label>
             <textarea id="body" name="body" rows="5" class="form-control <%= (errors.body)?'is-invalid':''%>"><%= post.body %></textarea>
             <% if(errors.body){ %>
               <span class="invalid-feedback"><%= errors.body.message %></span>
@@ -49,14 +50,14 @@
           </div>
         <% } %>
 
-        <div>
-          <a class="btn btn-primary" href="/posts/<%= post._id %>">Back</a>
-          <button type="submit" class="btn btn-primary">Submit</button>
+        <div style="float:right">
+          <a class="btn btn-outline-secondary" href="/posts/<%= post._id %>">Back</a>
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
         </div>
 
       </form>
 
     </div>
-    <%- include('../partials/gmap') %> 
+    
   </body>
 </html>

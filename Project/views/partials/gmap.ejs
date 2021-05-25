@@ -5,7 +5,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style type="text/css">
       #map {
-        height: 100%;
+        height: 50%;
       }
 
       html,
@@ -27,6 +27,61 @@
         font-family: "Roboto", "sans-serif";
         line-height: 30px;
         padding-left: 10px;
+      }
+
+      .button-wrapper{
+        display: inline-block;
+        border: none;
+      }
+
+      .button {
+        background: #fff;
+        border: none;
+        padding: 2px;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        transition: all .35s ease-in-out .35s;
+          margin: 0 auto;
+          width: 120px;
+          text-align: center; 
+      }
+
+      .button:hover{
+        background: #36B4C7;
+        color: #fff;
+        transition: all .35s ease-in-out .35s;
+      }
+      .button:after {
+        bottom: -100%;
+        right: -100%;
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #36B4C7;
+        transition: all .35s ease-in-out .5s;
+      }
+      .button:hover:after {
+        right: 0;
+        bottom: 0;
+        transition: all ease-in-out .35s;
+      }
+      .button:before {
+        top: -100%;
+        left: -100%;
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #36B4C7;
+        transition: all .35s ease-in-out .5s;
+      }
+      .button:hover:before {
+        left: 0;
+        top: 0;
+        transition: all ease-in-out .35s;
       }
     </style>
     <script>
@@ -65,9 +120,17 @@
   </head>
   <body>
     <div id="floating-panel">
-      <input id="submit" type="button" value="find location" />
+      <div class="light-button button-wrapper">
+        <input class="button" id="submit" type="button" value="Find Location"/>
+      </div>
+      
     </div>
-    <div id="map"></div>
+    <div class="container mb-3" id="map"></div>
+
+    <!-- <div id="floating-panel">
+      <input id="submit" type="button" value="Find Location" />
+    </div>
+    <div id="map" class="container mb-3"></div> -->
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script

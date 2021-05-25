@@ -2,40 +2,65 @@
 <html>
   <head>
     <%- include('../partials/head') %>
+    <style>
+      #show {
+        font-family: 'Archivo', sans-serif;
+        /* font-family: 'PT Serif', serif; */
+        font-size:3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      div#show_wrapper{
+        border: 20px transparent white;
+        padding: 5px 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 450px; height: 250px;
+        margin-left: -220px;
+        margin-top: -170px;
+
+        display: flex; flex-direction:column; justify-content:center; align-items: center;
+      }
+    </style>
   </head>
   <body>
     <%- include('../partials/nav') %>
 
     <div class="container mb-3">
+      <div id="show_wrapper">
+        <h3 class="contentBoxTop" id="show"><%= user.username %></h3>
 
-      <h3 class="contentBoxTop"><%= user.username %></h3>
-
-      <form class="user-form" action="/users" method="post">
-        <fieldset disabled>
-          <div class="form-group row">
-            <label for="name" class="col-sm-3 col-form-label">Name</label>
-            <div class="col-sm-9">
-              <input class="form-control" type="text" id="name" name="name" value="<%= user.name %>">
+        <form class="user-form" action="/users" method="post">
+          <fieldset disabled>
+            <div class="form-group row">
+              <label for="name" class="col-sm-3 col-form-label" style="font-weight: bold; font-family: 'Archivo', sans-serif;">Name</label>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" id="name" name="name" value="<%= user.name %>">
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="email" class="col-sm-3 col-form-label">Email</label>
-            <div class="col-sm-9">
-              <input class="form-control" type="text" id="email" name="email" value="<%= user.email %>">
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 col-form-label" style="font-weight: bold; font-family: 'Archivo', sans-serif;">Email</label>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" id="email" name="email" value="<%= user.email %>">
+              </div>
             </div>
-          </div>
-        </fieldset>
-      </form>
-
-      <div>
-        <a class="btn btn-primary" href="/users">Back</a>
-        <% if(isAuthenticated && currentUser.id == user.id){ %>
-        <a class="btn btn-primary" href="/users/<%= user.username %>/edit">Edit</a>
-        <% } %>
-        <form action="/users/<%= user.username %>?_method=delete" method="post" class="d-inline">
-          <a class="btn btn-primary" href="javascript:void(0)" onclick="confirm('Do you want to delete this?')?this.parentElement.submit():null;">Delete</a>
+          </fieldset>
         </form>
+
+        <div>
+          <a class="btn btn-outline-secondary" href="/">Back</a>
+          <% if(isAuthenticated && currentUser.id == user.id){ %>
+          <a class="btn btn-outline-primary" href="/users/<%= user.username %>/edit">Edit</a>
+          <% } %>
+          <form action="/users/<%= user.username %>?_method=delete" method="post" class="d-inline">
+            <a class="btn btn-outline-primary" href="javascript:void(0)" onclick="confirm('Do you want to delete this?')?this.parentElement.submit():null;">Delete</a>
+          </form>
+        </div>
       </div>
+
+      
 
     </div>
   </body>
