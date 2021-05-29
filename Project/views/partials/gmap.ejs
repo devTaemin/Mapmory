@@ -94,6 +94,7 @@
       
         const geocoder = new google.maps.Geocoder();
         document.getElementById("submit").addEventListener("click", () => {
+          map.setZoom(15);
           geocodeAddress(geocoder, map);
           
         });
