@@ -6,11 +6,10 @@
   </head>
   <body>
     <%- include('../partials/nav') %>
-
+ 
     <div class="container mb-3">
       <div>
-        <h2 class="mb-3" style="font-weight: bold; font-style:italic; float:left;">Memory</h2>
-
+        <h2 class="mb-3" style="font-weight: bold; font-style:italic; float:left;">Memory</h2>  
         <div style="float:right">
           <% if(isAuthenticated){ %>
             <a class="btn btn-outline-primary" href="/posts/new">Write Memory</a>
@@ -57,5 +56,26 @@
 
 
     </div>
+    <form action="/posts" method="get" class="post-index-tool"> <!-- 1 -->
+      <div class="form-row">
+      
+        <div class="form-group col-9"> <!-- 2 -->
+          <label>Search</label>
+          <div class="input-group">
+            <select name="searchType" class="custom-select">
+              <option value="title,body" <% searchType=='title,body'?'selected':'' %>>Title, Body</option>
+              <option value="title" <%= searchType=='title'?'selected':'' %>>Title</option>
+              <option value="body" <%= searchType=='body'?'selected':''' %>>Body</option>
+            </select>
+            <input minLength="3" type="text" name="searchText" value="<%= searchText %>">
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" type="submit">search</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+
   </body>
 </html>

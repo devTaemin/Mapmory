@@ -7,6 +7,32 @@ var util = require('../util');
 
 // Post home
 router.get('/', function(req, res){
+        var page = Math.max(1, parseInt(req.query.page));
+        var limit = Math.max(1, parseInt(req.query.limit));
+        page = !isNaN(page)?page:1;
+        limit = !isNaN(limit)?limit:10;
+      
+        var searchQuery = createSearchQuery(req.query); // 1
+      
+        var skip = (page-1)*limit;
+        var count = await Post.countDocuments(searchQuery); // 1-1
+        var maxPage = Math.ceil(count/limit);
+        var posts = await Post.find(searchQuery) // 1-2
+          .populate('author')
+          .sort('-createdAt')
+          .skip(skip)
+          .limit(limit)
+          .exec();
+      
+        res.render('posts/index', {
+          posts:posts,
+          currentPage:page,
+          maxPage:maxPage,
+          limit:limit,
+          searchType:req.query.searchType, // 2
+          searchText:req.query.searchText  // 2
+        });
+      });
     Post.find({})
     .populate('author')
     .sort('-createdAt')
@@ -14,7 +40,6 @@ router.get('/', function(req, res){
         if(err){return res.json(err)};
         res.render('posts/index', {posts:posts});
     });
-});
 
 
 // Post new
@@ -34,9 +59,25 @@ router.post('/', util.isLoggedin, function(req, res){
             req.flash('errors', util.parseError(err));
             return res.redirect('/posts/new');
         };
-        res.redirect('/posts');
+        res.redirect('/posts'+res.locals.getPostQueryString(false, { page:1, searchText:'' }));
     });
 });
+
+function createSearchQuery(queries){
+    var searchQuery = {};
+    if(queries.searchType && queries.searchText && queries.searchText.length >= 3){ // 1
+      var searchTypes = queries.searchType.toLowerCase().split(',');
+      var postQueries = [];
+      if(searchTypes.indexOf('title')>=0){
+        postQueries.push({ title: { $regex: new RegExp(queries.searchText, 'i') } }); // 2
+      }
+      if(searchTypes.indexOf('body')>=0){
+        postQueries.push({ body: { $regex: new RegExp(queries.searchText, 'i') } });
+      }
+      if(postQueries.length > 0) searchQuery = {$or:postQueries}; // 3
+    }
+    return searchQuery;
+  }
 
 
 // Post show
