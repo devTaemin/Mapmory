@@ -5,7 +5,6 @@ var methodOverride = require('method-override');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('./config/passport');
-var multer = require('multer');
 //require('./config/passport');
 
 var app = express();
