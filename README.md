@@ -1,4 +1,4 @@
-# Mapmory : save your reminiscence with place
+# 📒 Mapmory
 
 ### Mapmory functions
 -----------------
@@ -17,7 +17,18 @@
 + Back end : Node JS, Mongo DB, Express
 + Server : AWS EC2
 
-## Quick Start (build, install, setup manual)
+## ✏️ Quick Start (build, install, setup manual)
+1. git clone
+2. install node js
+3. install mongoose
+1. npm init
+2. npm install express --save
+3. npm install body-parser --save
+4. npm install express-session --save
+5. node index.js
+
+* If it does not work well, install Nodemon
+* npm install nodemon-g
 
 ### Dependency
 -----------------
@@ -33,7 +44,7 @@
 + passport : 0.4.1,
 + passport-local : 1.0.0
 
-### Team members
+### 👬 Team members
 -----------------
 + Lim Taemin
 + Hong Jiyoon
