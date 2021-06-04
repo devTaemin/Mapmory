@@ -1,1 +1,0 @@
-"https://maps.googleapis.com/maps/api/js?key=sAIzaSyDK6K4iDdo9cKQdrNoOJaaYg29nEG0BIjw&callback=initMap&libraries=&v=weekly"

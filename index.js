@@ -16,8 +16,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
 // Connect DB environment variable
-const mongokey = require('./keys.json');
-mongoose.connect(mongokey.Mongokey);
+mongoose.connect('mongodb+srv://Mapmory_admin:admin@cluster0.ncnjj.mongodb.net/Project-Mapmory?retryWrites=true&w=majority');
 
 // Store DB in the variable 'db'
 var db = mongoose.connection;
