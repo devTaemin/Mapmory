@@ -1,15 +1,21 @@
-# Mapmory
+# Mapmory : save your reminiscence with place
 
 ### Mapmory functions
 -----------------
-
++ Register
++ Log in/out
++ Member information edit
++ Display your memories(With Title, Date, Author)
++ Search your memory(Search terms and buttons)
++ Save your memory with map
++ Show your memory with map
++ Edit your memory with map
 
 ### Stack
 -----------------
-+ Node JS
-+ Mongo DB
-+ Express
-+ AWS EC2
++ Front end : EJS template engine
++ Back end : Node JS, Mongo DB, Express
++ Server : AWS EC2
 
 ## Quick Start (build, install, setup manual)
 
