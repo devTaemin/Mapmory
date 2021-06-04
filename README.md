@@ -18,17 +18,21 @@
 + Server : AWS EC2
 
 ## ✏️ Quick Start (build, install, setup manual)
-1. git clone
-2. install node js
-3. install mongoose
-1. npm init
-2. npm install express --save
-3. npm install body-parser --save
-4. npm install express-session --save
-5. node index.js
 
-* If it does not work well, install Nodemon
-* npm install nodemon-g
+    $ git clone http://khuhub.khu.ac.kr/2017101294/Mapmory.git
+    $ node index.js
+
+If it does not work well
+
+    $ npm install nodemon-g
+
+At package.json, add "start" : "nodemon index.js"
+    
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon index.js"}
+
+    $ npm start
 
 ### Dependency
 -----------------
