@@ -1,0 +1,64 @@
+# 📒 Mapmory
+
+#### Mapmory provides location-based recording sevices utilizing Google Maps API.
+
+
+### Mapmory functions
+-----------------
+- [x] Register
+- [x] Log in/out
+- [x] Member information edit
+- [x] Create your memories(With Title, Date, Author, Address)
+- [x] Delete your memories
+- [x] Save your memory with map
+- [x] Show your memory with map
+- [x] Edit your memory with map
+- [x] Search your memories
+
+
+### Stack
+-----------------
++ Front end : EJS template engine
++ Back end : Express/NodeJS
++ Database : Mongo DB
++ Server : AWS EC2
+
+
+## ✏️ Quick Start (build, install, setup manual)
+
+    $ git clone http://khuhub.khu.ac.kr/2017101294/Mapmory.git
+    $ npm install
+    $ node index.js
+
+If it does not work well
+
+    $ npm install nodemon-g
+
+At package.json, add  ``` "start" : "nodemon index.js" ```
+    
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon index.js"
+    }
+
+    $ npm start
+
+
+### Dependency
+-----------------
++ bcryptjs : 2.4.3,
++ body-parser : 1.19.0,
++ connect-flash : 0.1.1,
++ ejs : 3.1.6,
++ express : 4.17.1,
++ express-session : 1.17.1,
++ method-override : 3.0.0,
++ mongoose : 5.12.8,
++ passport : 0.4.1,
++ passport-local : 1.0.0
+
+
+### 👬 Team members
+-----------------
++ Im Taemin (@devTaemin)
++ Hong Jiyoon (@fheldgktpdy)

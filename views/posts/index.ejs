@@ -47,15 +47,49 @@
               </tr>
             <% }) %>
           </tbody>
-  
         </table>
 
+        <nav class="nav justify-content-center bg-light">
+          <% 
+            var offset = 2;
+            var previousBtnEnabled = currentPage>1;
+            var nextBtnEnabled = currentPage<maxPage;
+          %>
+          <ul class="pagination pagination-sm justify-content-center align-items-center h-100 mb-0">            
+            <li class="page-item <%= previousBtnEnabled?'':'disabled' %>">
+              <a class="page-link" href="/posts?page=<%= currentPage-1 %>&limit=<%= limit %>"<%= previousBtnEnabled?'':'tabindex=-1' %>>«</a>
+            </li>
+            <% for(i=1;i<=maxPage;i++){ %>
+              <% if(i==1 || i==maxPage || (i>=currentPage-offset && i<=currentPage+offset)){ %>
+                <li class="page-item <%= currentPage==i?'active':'' %>"><a class="page-link" href="/posts?page=<%= i %>&limit=<%= limit %>"><%= i %></a></li>
+              <% } else if(i==2 || i==maxPage-1){ %>
+                <li><a class="page-link">...</a></li>
+              <% } %>
+            <% } %>
+            <li class="page-item <%= nextBtnEnabled?'':'disabled' %>">
+              <a class="page-link" href="/posts?page=<%= currentPage+1 %>&limit=<%= limit %>"<%= nextBtnEnabled?'':'tabindex=-1' %>>»</a>
+            </li>
+          </ul>
+        </nav>
+
+        
+      <form action="/posts" method="get" style="float:right">
+        <div class="form-row">
+          <div class="form-group">
+            <div class="input-group">
+              <select name="searchType" class="custom-select">
+                <option value="title" <%= searchType=='title'?'selected':'' %>>Title</option>
+              </select>
+              <input minLength="3" type="text" name="searchText" value="<%= searchText %>">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
       </div>
-
-     
-
-
-
     </div>
   </body>
 </html>

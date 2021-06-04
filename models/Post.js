@@ -7,7 +7,7 @@ var postSchema = mongoose.Schema({
     address:{type:String, required:[true, 'address is required!']},
     body:{type:String, required:[true, 'Content is required!']},
     author:{type:mongoose.Schema.Types.ObjectId, ref:'user', required:true},
-    createdAt:{type:Date, default:Date.now()},
+    createdAt:{type:Date, default:Date.now},
     updatedAt:{type:Date}
 });
 

@@ -16,7 +16,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
 // Connect DB environment variable
-mongoose.connect('mongodb+srv://Mapmory_admin:admin@cluster0.ncnjj.mongodb.net/Project-Mapmory?retryWrites=true&w=majority');
+mongoose.connect('mongodbkey입력하는곳');
 
 // Store DB in the variable 'db'
 var db = mongoose.connection;
