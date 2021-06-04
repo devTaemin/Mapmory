@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      import dotenv from "dotenv";
-      dotenv.config();
-      API_KEY = process.env.Map_Key
-    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -147,7 +142,7 @@
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
-      src=API_KEY
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK6K4iDdo9cKQdrNoOJaaYg29nEG0BIjw&callback=initMap&libraries=&v=weekly"
       async
     ></script>
 

@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-    import dotenv from "dotenv";
-    dotenv.config();
-  </script>
     <title>Geocoding Service</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style type="text/css">
@@ -139,7 +135,7 @@
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
-      src=process.env.Map_Key;
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK6K4iDdo9cKQdrNoOJaaYg29nEG0BIjw&callback=initMap&libraries=&v=weekly"
       async
     ></script>
   </body>
