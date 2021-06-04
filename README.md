@@ -47,7 +47,8 @@
     
     $ node index.js
 
-<br/>
+----------------
+
 <br/>
 ----------------
 If ``` node index.js ``` does not work well
@@ -63,8 +64,6 @@ At package.json, add  ``` "start" : "nodemon index.js" ```
 
     $ npm start
 ----------------
-<br/>
-<br/>
 
 ### Dependency
 -----------------
