@@ -34,12 +34,13 @@
     $ cd Mapmory
     $ npm install
 
-    Input Mongo key and google map key
+    Input google map key(partials/showmap.ejs and partials/gmap.ejs)
    <img src = "https://user-images.githubusercontent.com/73929383/120812504-fd8c0180-c587-11eb-9258-e99adec55714.PNG" width="550" height = "110">
 
+    Input Mongo key(index.js)
    <img src = "https://user-images.githubusercontent.com/73929383/120812932-696e6a00-c588-11eb-8a07-ce2b22ff09c0.PNG" width="550" height = "100">
 
-    Input Port number
+    Input Port number(index.js)
    <img src= "https://user-images.githubusercontent.com/73929383/120813437-d7b32c80-c588-11eb-9d52-4ef570212d85.PNG" width = "550" height = "120">
 
     
