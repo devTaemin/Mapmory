@@ -27,7 +27,20 @@
 ## ✏️ Quick Start (build, install, setup manual)
 
     $ git clone http://khuhub.khu.ac.kr/2017101294/Mapmory.git
+    $ cd Mapmory
     $ npm install
+
+    Input Mongo key and google map key
+   <img src = "https://user-images.githubusercontent.com/73929383/120812504-fd8c0180-c587-11eb-9258-e99adec55714.PNG" width="550" height = "110">
+
+   <img src = "https://user-images.githubusercontent.com/73929383/120812932-696e6a00-c588-11eb-8a07-ce2b22ff09c0.PNG" width="550" height = "100">
+
+    Input Port number
+   <img src= "https://user-images.githubusercontent.com/73929383/120813437-d7b32c80-c588-11eb-9d52-4ef570212d85.PNG" width = "550" height = "120">
+
+    
+
+
     $ node index.js
 
 If it does not work well

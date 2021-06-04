@@ -69,7 +69,7 @@ app.use('/users', require('./routes/users'))
 
 
 // Server
-var port = 3000;
+var port = "포트번호 입력";
 app.listen(port, function(){
-    console.log('server on! http://localhost:' + port);
+    console.log('server on! http://:::' + port);
 });
