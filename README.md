@@ -28,7 +28,7 @@ If it does not work well
 
     $ npm install nodemon-g
 
-At package.json, add ```shell "start" : "nodemon index.js" ```
+At package.json, add  ``` "start" : "nodemon index.js" ```
     
     "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -52,5 +52,5 @@ At package.json, add ```shell "start" : "nodemon index.js" ```
 
 ### 👬 Team members
 -----------------
-+ Im Taemin (devTaemin)
-+ Hong Jiyoon (fheldgktpdy)
++ Im Taemin (@devTaemin)
++ Hong Jiyoon (@fheldgktpdy)
