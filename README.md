@@ -1,15 +1,17 @@
 # 📒 Mapmory
 
+Mamory 
+
 ### Mapmory functions
 -----------------
-+ Register
-+ Log in/out
-+ Member information edit
-+ Display your memories(With Title, Date, Author)
-+ Search your memory(Search terms and buttons)
-+ Save your memory with map
-+ Show your memory with map
-+ Edit your memory with map
+- [x] Register
+- [x] Log in/out
+- [x] Member information edit
+- [x] Display your memories(With Title, Date, Author)
+- [x] Search your memory(Search terms and buttons)
+- [x] Save your memory with map
+- [x] Show your memory with map
+- [x] Edit your memory with map
 
 ### Stack
 -----------------
@@ -26,7 +28,7 @@ If it does not work well
 
     $ npm install nodemon-g
 
-At package.json, add "start" : "nodemon index.js"
+At package.json, add ```shell "start" : "nodemon index.js" ```
     
     "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -50,5 +52,5 @@ At package.json, add "start" : "nodemon index.js"
 
 ### 👬 Team members
 -----------------
-+ Lim Taemin
-+ Hong Jiyoon
++ Im Taemin (devTaemin)
++ Hong Jiyoon (fheldgktpdy)
