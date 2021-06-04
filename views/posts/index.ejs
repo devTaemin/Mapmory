@@ -71,6 +71,24 @@
             </li>
           </ul>
         </nav>
+
+        
+      <form action="/posts" method="get" style="float:right">
+        <div class="form-row">
+          <div class="form-group">
+            <div class="input-group">
+              <select name="searchType" class="custom-select">
+                <option value="title" <%= searchType=='title'?'selected':'' %>>Title</option>
+              </select>
+              <input minLength="3" type="text" name="searchText" value="<%= searchText %>">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
       </div>
     </div>
   </body>
