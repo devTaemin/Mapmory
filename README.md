@@ -34,6 +34,7 @@
     $ cd Mapmory
     $ npm install
 
+----------------
     Input google map key(partials/showmap.ejs and partials/gmap.ejs)
    <img src = "https://user-images.githubusercontent.com/73929383/120812504-fd8c0180-c587-11eb-9258-e99adec55714.PNG" width="550" height = "110">
 
@@ -44,11 +45,12 @@
    <img src= "https://user-images.githubusercontent.com/73929383/120813437-d7b32c80-c588-11eb-9d52-4ef570212d85.PNG" width = "550" height = "120">
 
     
-
-
     $ node index.js
 
-If it does not work well
+<br/>
+<br/>
+----------------
+If ``` node index.js ``` does not work well
 
     $ npm install nodemon-g
 
@@ -60,7 +62,9 @@ At package.json, add  ``` "start" : "nodemon index.js" ```
     }
 
     $ npm start
-
+----------------
+<br/>
+<br/>
 
 ### Dependency
 -----------------
