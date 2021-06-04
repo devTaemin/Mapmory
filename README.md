@@ -16,12 +16,16 @@
 - [x] Search your memories
 
 
-### Stack
+### Development environment
 -----------------
 + Front end : EJS template engine
 + Back end : Express/NodeJS
 + Database : Mongo DB
 + Server : AWS EC2
+
+### Open source API
+-----------------
++ [Google map api](https://developers.google.com/maps/documentation/javascript/overview?hl=ko)
 
 
 ## ✏️ Quick Start (build, install, setup manual)
