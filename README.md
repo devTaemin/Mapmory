@@ -83,5 +83,5 @@ At package.json, add  ``` "start" : "nodemon index.js" ```
 
 ### 👬 Team members
 -----------------
-+ Im Taemin (@devTaemin)
-+ Hong Jiyoon (@fheldgktpdy)
++ Im Taemin [(@devTaemin)](github.com/devTaemin)
++ Hong Jiyoon [(@fheldgktpdy)](github.com/fheldgktpdy)
