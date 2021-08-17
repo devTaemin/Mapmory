@@ -44,19 +44,19 @@
     Input Port number(index.js)
    <img src= "https://user-images.githubusercontent.com/73929383/120813437-d7b32c80-c588-11eb-9d52-4ef570212d85.PNG" width = "550" height = "120">
 
-    
+
     $ node index.js
 
 ----------------
 
 <br/>
 ----------------
-If ``` node index.js ``` does not work well
+If  ``` node index.js ```  does not work well
 
     $ npm install nodemon-g
 
 At package.json, add  ``` "start" : "nodemon index.js" ```
-    
+
     "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start" : "nodemon index.js"
