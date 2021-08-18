@@ -1,9 +1,19 @@
 # 📒 Mapmory
 
-#### Mapmory provides location-based recording sevices utilizing Google Maps API.
+<div align=right>
 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FdevTaemin%2FMapmory&count_bg=%233D7CC8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-### Mapmory functions
+</div>
+
+<div align=center>
+    
+### Mapmory provides location-based recording sevices utilizing Google Maps API.
+    
+</div>
+<br>
+
+### 📌 Mapmory functions
 -----------------
 - [x] Register
 - [x] Log in/out
@@ -14,19 +24,20 @@
 - [x] Show your memory with map
 - [x] Edit your memory with map
 - [x] Search your memories
+<br>
 
-
-### Development environment
+### 📌 Development environment
 -----------------
 + Front end : EJS template engine
 + Back end : Express/NodeJS
 + Database : Mongo DB
 + Server : AWS EC2
+<br>
 
-### Open source API
+### 📌 Open source API
 -----------------
 + [Google map api](https://developers.google.com/maps/documentation/javascript/overview?hl=ko)
-
+<br>
 
 ## ✏️ Quick Start (build, install, setup manual)
 
@@ -49,7 +60,6 @@
 
 ----------------
 
-<br/>
 
 ----------------
 
@@ -66,8 +76,9 @@ At package.json, add  ``` "start" : "nodemon index.js" ```
 
     $ npm start
 ----------------
+<br>
 
-### Dependency
+### 📌 Dependency
 -----------------
 + bcryptjs : 2.4.3,
 + body-parser : 1.19.0,
@@ -79,7 +90,7 @@ At package.json, add  ``` "start" : "nodemon index.js" ```
 + mongoose : 5.12.8,
 + passport : 0.4.1,
 + passport-local : 1.0.0
-
+<br>
 
 ### 👬 Team members
 -----------------
