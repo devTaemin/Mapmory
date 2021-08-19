@@ -26,7 +26,13 @@
 - [x] Search your memories
 <br>
 
-### 📌 Development environment
+### 📌 Open source API
+-----------------
++ [Google map api](https://developers.google.com/maps/documentation/javascript/overview?hl=ko)
+<br>
+
+
+### ⚙️ Development environment
 -----------------
 + Front end : EJS template engine
 + Back end : Express/NodeJS
@@ -34,10 +40,6 @@
 + Server : AWS EC2
 <br>
 
-### 📌 Open source API
------------------
-+ [Google map api](https://developers.google.com/maps/documentation/javascript/overview?hl=ko)
-<br>
 
 ## ✏️ Quick Start (build, install, setup manual)
 
@@ -78,7 +80,7 @@ At package.json, add  ``` "start" : "nodemon index.js" ```
 ----------------
 <br>
 
-### 📌 Dependency
+### ⚙️ Dependency
 -----------------
 + bcryptjs : 2.4.3,
 + body-parser : 1.19.0,
